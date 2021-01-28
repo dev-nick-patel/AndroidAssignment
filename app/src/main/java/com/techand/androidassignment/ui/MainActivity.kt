@@ -1,8 +1,11 @@
-package com.techand.androidassignment
+package com.techand.androidassignment.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.techand.androidassignment.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
