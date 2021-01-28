@@ -1,4 +1,4 @@
-package com.techand.androidassignment.model
+package com.techand.androidassignment.data.model
 
 data class RowResult(
     val rows: List<Row>,
