@@ -10,9 +10,7 @@ import com.bumptech.glide.Priority
 import com.bumptech.glide.request.RequestOptions
 import com.techand.androidassignment.R
 import com.techand.androidassignment.data.local.entities.Row
-import com.techand.androidassignment.data.local.entities.RowResult
 import com.techand.androidassignment.databinding.RawItemViewBinding
-import com.techand.androidassignment.util.Resource
 
 class MainAdapter : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
     private val items = ArrayList<Row>()
@@ -31,6 +29,17 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
         return items.size
     }
 
+    fun clear() {
+        items.clear()
+        notifyDataSetChanged()
+    }
+
+    // Add a list of items -- change to type used
+    fun addAll(list: ArrayList<Row>) {
+        items.addAll(list)
+        notifyDataSetChanged()
+    }
+
     class MainViewHolder(private val itemBinding: RawItemViewBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
 
@@ -39,14 +48,15 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
         @SuppressLint("SetTextI18n")
         fun bind(item: Row) {
             this.item = item
-
             itemBinding.tvTitle.text = item.title
             itemBinding.tvDescription.text = item.description
             if (item.imageHref.isNullOrEmpty())
                 itemBinding.imgLin.visibility = View.GONE
             else {
                 itemBinding.imgLin.visibility = View.VISIBLE
-                Glide.with(itemBinding.root)
+//                var urls = item.imageHref.split(":")
+//                urls[0] == "https"
+                Glide.with(this.itemView)
                     .load(item.imageHref)
                     .apply(
                         RequestOptions
@@ -58,9 +68,9 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
         }
     }
 
-    fun setItems(items: Resource<RowResult>) {
+    fun setItems(items: List<Row>) {
         this.items.clear()
-        for (item in items.data?.rows!!) {
+        for (item in items) {
             if (!item.noData())
                 this.items.add(item)
         }
