@@ -1,25 +1,18 @@
 package com.techand.androidassignment.ui
 
 import android.annotation.SuppressLint
-import android.opengl.Visibility
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.AsyncListDiffer
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.Priority
-import com.bumptech.glide.load.resource.bitmap.CenterCrop
-import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.request.RequestOptions
-import com.bumptech.glide.request.RequestOptions.centerCropTransform
 import com.techand.androidassignment.R
-import com.techand.androidassignment.data.model.Row
-import com.techand.androidassignment.data.model.RowResult
+import com.techand.androidassignment.data.local.entities.Row
+import com.techand.androidassignment.data.local.entities.RowResult
 import com.techand.androidassignment.databinding.RawItemViewBinding
 import com.techand.androidassignment.util.Resource
-import kotlinx.android.synthetic.main.raw_item_view.view.*
 
 class MainAdapter : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
     private val items = ArrayList<Row>()

@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import com.techand.androidassignment.data.model.RowResult
+import com.techand.androidassignment.data.local.entities.RowResult
 import com.techand.androidassignment.data.repository.MainRepository
 import com.techand.androidassignment.util.Resource
 import kotlinx.coroutines.Dispatchers
