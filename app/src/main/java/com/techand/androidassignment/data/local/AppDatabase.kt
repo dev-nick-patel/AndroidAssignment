@@ -1,4 +1,4 @@
-package com.techand.androidassignment.data.local.dao
+package com.techand.androidassignment.data.local
 
 import android.content.Context
 import androidx.room.Database

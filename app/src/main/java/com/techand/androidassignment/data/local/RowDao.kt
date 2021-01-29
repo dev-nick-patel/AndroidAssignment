@@ -1,7 +1,10 @@
-package com.techand.androidassignment.data.local.dao
+package com.techand.androidassignment.data.local
 
 import androidx.lifecycle.LiveData
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
 import com.techand.androidassignment.data.local.entities.Row
 
 @Dao

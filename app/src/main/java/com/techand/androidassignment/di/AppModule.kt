@@ -1,8 +1,8 @@
 package com.techand.androidassignment.di
 
 import android.content.Context
-import com.techand.androidassignment.data.local.dao.AppDatabase
-import com.techand.androidassignment.data.local.dao.RowDao
+import com.techand.androidassignment.data.local.AppDatabase
+import com.techand.androidassignment.data.local.RowDao
 import com.techand.androidassignment.data.remote.ApiService
 import com.techand.androidassignment.data.remote.MainRemoteDataSource
 import com.techand.androidassignment.data.repository.MainRepository
